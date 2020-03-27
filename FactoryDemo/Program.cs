@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FactoryDemo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,12 @@ namespace FactoryMethod
             var factory = new SavingsAcctFactory() as ICreditUnionFactory;
             var citiAcct = factory.GetSavingsAccount("CITI-321");
             var nationalAcct = factory.GetSavingsAccount("NATIONAL-987");
+            var pncAcct = factory.GetSavingsAccount("PNC-456");
 
             Console.WriteLine($"My citi balance is ${citiAcct.Balance}" +
                 $" and national balance is ${nationalAcct.Balance}");
+
+            Console.WriteLine($"Also, my PNC account balance is ${pncAcct.Balance}.");
         }
 
 
@@ -59,6 +63,9 @@ namespace FactoryMethod
 
                 if (acctNo.Contains("NATIONAL"))
                     return new NationalSavingsAcct();
+
+                if (acctNo.Contains("PNC"))
+                    return new PNCSavingsAcct();
 
                 throw new ArgumentException("Invalid Account Number");
             }
