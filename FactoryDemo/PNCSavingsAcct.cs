@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using static FactoryMethod.Program;
+﻿using static DesignPatternDemos.FactoryDemo.Program;
 
 namespace FactoryDemo
 {

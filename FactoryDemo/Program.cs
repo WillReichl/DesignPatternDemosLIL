@@ -1,11 +1,7 @@
 ﻿using FactoryDemo;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace FactoryMethod
+namespace DesignPatternDemos.FactoryDemo
 {
     public class Program
     {
@@ -21,7 +17,6 @@ namespace FactoryMethod
 
             Console.WriteLine($"Also, my PNC account balance is ${pncAcct.Balance}.");
         }
-
 
         // Product
         public abstract class ISavingsAccount
@@ -48,7 +43,7 @@ namespace FactoryMethod
         }
 
         // Creator
-        interface ICreditUnionFactory
+        private interface ICreditUnionFactory
         {
             ISavingsAccount GetSavingsAccount(string acctNo);
         }
